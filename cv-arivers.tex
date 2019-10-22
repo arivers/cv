@@ -1,0 +1,439 @@
+% Dr. Geoff Boeing - Curriculum Vitae
+% Copyright 2019 Geoff Boeing
+% Email: boeing@usc.edu
+% Web: https://geoffboeing.com/
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+%\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+
+%%%%
+\usepackage{apalike}
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+
+\usepackage[colorlinks=true]{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+% hanging publications: 1st line starts at beginning of line, 
+% further lines are placed a bit to the right
+\usepackage{hanging}
+\newcommand\publication[1]{%
+	\smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+}
+
+%%%%
+
+
+% what is your name?
+\newcommand{\myname}{Adam R. Rivers, PhD}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+            \setlength{\parskip}{0em}
+            \setlength{\itemsep}{\listitemspace}
+            \setlength{\parsep}{\listitemspace}}}
+    {\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {microbiology ecology, microbiome, machine learning, agriculture},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    \raggedright
+
+    % display name as the document title
+    \namefont{\myname}
+
+    % contact info
+    \vspace{1em}
+    \begin{minipage}[t]{0.68\textwidth}
+        United States Department of Agriculture \\
+        Agricultural Research Service\\
+        Genomics and Bioinformatics Research Unit\\
+        Gainesville, Florida, USA
+    \end{minipage}
+    \begin{minipage}[t]{0.31\textwidth}
+        Email: \href{mailto:adam.rivers@usda.gov}{adam.rivers@usda.gov} \\
+        Phone: +1 352 374 5930\\
+        Web: \href{https://tinyecology.com/}{https://tinyecology.com}
+    \end{minipage}
+    \vspace{0.5em}
+
+
+
+    \section*{Education}
+
+    \begin{tablist}
+
+        \item[Ph.D.] \tab Biological Oceanography, Massachusetts Institute of Technology / Woods Hole Oceanographic Institution. 2009
+
+        \item[B.A.]  \tab Biology/Chemistry, New College of Florida, 2001
+
+    \end{tablist}
+
+
+
+    \section*{Work experience}
+
+    \begin{tablist}
+
+        \item[2017--]   \tab United Dates Department of Agriculture, Agricultural Research Service \\
+                             Biologist, Computational Bioinformatics, Genomics and Bioinformatics Research Unit\\
+                             \tab Courtesy Faculty, University of Florida, Dept. of Microbiology and Cell Science\\
+                             \tab Affiliate Scientist, Lawrence Berkeley National Laboratory
+                            
+
+        \item[2016--17] \tab US Department of Energy, Joint Genome Institute \\
+                             Metagenome Program Head \\
+                             Research Scientist, Environmental Genomics and Systems Biology, Lawrence Berkeley National Laboratory \\
+                             
+        \item[2014--16] \tab US Department of Energy, Joint Genome Institute \\
+                             Research Scientist  \\
+
+        \item[2019--14] \tab University of Georgia \\
+                             Postdoctoral Research Associate, Department of Marine Science
+                             
+		  
+
+    \end{tablist}
+
+    \section*{Research Areas}
+
+    \begin{itemize}
+
+        \item Microbial ecology and Microbiome science in plants, animals, fungi, aquatic, and soil systems
+
+        \item Applied machine learning: genomic, metagenomic, and chemometric data 
+
+        \item Bioinformatics software development and high-performance computing
+
+    \end{itemize}
+
+
+\nobibliography{rivers.bib}
+\bibliographystyle{apalike}
+
+\section*{Publications}
+
+
+	
+    \subsection*{Articles in Peer-Reviewed Journals}
+
+ 
+	\publication{Bolyen2019}
+	\publication{Smith2019}
+        \publication{Valles2019}
+  	\publication{Rivers2018}
+	\publication{Bowers2017}	
+	\publication{Lamit2017}
+	\publication{Paez-Espino2017}
+	\publication{Rivers2016}
+	\publication{Beier2015}
+	\publication{Beier2015a}	
+	\publication{Kemp2015}	
+	\publication{Rivers2014}	
+	\publication{Moran2013}	
+	\publication{Rivers2013}
+	\publication{Rivers2013a}
+	\publication{Rivers2009}
+	\publication{Teske2009}
+	\publication{Mcintyre2005}
+
+
+    \subsection*{Journal Article Manuscripts Under Review}
+
+    \begin{tablist}
+
+        \item[2019] \tab Boyles, S. M. et al.  \enquote{Cryptic dengue virus infections in natural populations of \textit{Aedes aegypti} mosquitoes in Florida} Submitted to \textit{eLife}.
+        
+         \item[2019] \tab  Fernandez-Baca, C., Rivers, A.R., Maul, J. ,Kim, W., McClung, A., Roberts, D., Reddy, V.,  Barnaby. J. \enquote{Rice Plant-Soil Microbiome Interactions Driven by Root and Shoot Biomass} Submitted to \textit{Applied and Environmental Microbiology}.
+  
+
+    \end{tablist}
+    
+   
+    \section*{Grants and Awards}
+    
+
+
+    \subsection*{Awards and Honors}
+
+    \begin{tablist}
+
+    	\item[2012] \tab Innocentive challenge winner: Heat Stable Prevention of  Flavan3-ol -iron (II) complexes (\$25,000).
+
+    \end{tablist}
+
+    \subsection*{Grants and Fellowships}
+
+    \begin{tablist}
+
+        \item[2019] \tab  Salmonella typing and phenotypic prediction from genomes and metagenomes using population genomics and machine learning (\$455,993).  National Institute of Food and Agriculture AFRI, Food and Agriculture Cyberinformatics and Tools Initiative. PI.
+        
+        \item[2019]\tab  Sex determination of eggs by high-speed volatile compound mass spectrometry and machine learning  (\$396,763).  Foundation for Food and Agriculture Research, Eggtech Prize. PI.
+        
+        \item[2019] \tab  Developing probabilistic graphical models and analysis software to integrate multi-omics data (User facility exometabolite analysis). DOE Joint Genome Institute New Investigator Grant. PI.
+        
+        \item[2019] \tab Tools to rationally engineer microbial consortia for beneficial outcomes in crops. (\$140,000). ARS Administrator Funded Postdoctoral Research Associate Program. PI
+              
+        
+       \end{tablist} 
+        
+   
+    \section*{Invited Talks}
+
+    \begin{tablist}
+    
+    	\item[2020] \tab \enquote{USDA's efforts to advance AI Applications in Agriculture} IBM Research Almaden Forum Talk. San Jose, CA,  March 3.
+
+        \item[2019] \tab \enquote{AI, ML, Oh My: An overview of methods and software}  AI and Machine Learning SCINet Conference:  Current Uses and Potential to Solve Complex Problems in Agriculture, Beltsville, MD, September 20.
+        
+        \item[2019] \tab \enquote{Deep Learning for Agriculture} AI and Machine Learning SCINet Conference:  Current Uses and Potential to Solve Complex Problems in Agriculture,  Beltsville, MD, September 20.
+        
+        \item[2019] \tab \enquote{Microbiome data are compositional: What this means and how to deal with it} International Workshop on the Fruit Microbiome,  Leesburg, VA, September 12.
+        \item[2014] \tab \enquote{The ecological response of microbes to Deepwater Horizon.} Skidaway Institute of Oceanography. 
+        \item[2013] \tab \enquote{The ecological response of bathypelagic microbes to Deepwater Horizon.} New College of Florida.
+        \item[2011] \tab \enquote{Harvesting Our Future: Environmental Challenges for our Fisheries. New College of Florida.} Invited Panel Discussion.
+
+
+        
+       \end{tablist}
+
+  
+    \section*{Conference Activity}
+
+
+    \subsection*{Conference Presentations}
+
+    \begin{tablist}
+    	
+\item[2019 ] \tab Rivers, A.R. ITSxpress: software to trim internally transcribed spacers with quality scores for sequence variant analysis. Third Workshop on Statistical and Algorithmic Challenges in Microbiome Data Analysis at The Simons Foundation , New York, NY April 1. 
+
+\item[2018 ] \tab Rivers, A.R. Vica: Software to classify highly divergent viruses. ISME Congress. Leizig Germany.
+
+\item[2015 ] \tab Rivers, A.R. , Tringe, S.G. Discovering viruses in metagenomes and metatransciptomes. NSF HAB response workshop. Bowling Green, OH.
+
+\item[2015 ] \tab  Beier, S., Rivers, A.R., Moran, M.A., Obernosterer, I. The transcriptional response of prokaryotes to the addition of phytoplankton-derived DOM in seawater. Marine Microbes Gordon Research Conference. 
+
+\item[2015] \tab Rivers, A.R., Sharma, S., Lindquist, E., Tringe, S., Joye, S.B., Moran, M.A.  Transcriptional responses of deep water Bacteria and Archaea to hydrocarbon contamination from the Deepwater Horizon spill. ASLO Ocean Sciences. 
+
+\item[2010] \tab Rivers, A.R., Sharma, S., Chan, L., Moran, M.A. Methods for identifying small non-coding RNAs and quantitatively measuring small RNA abundance by pyrosequencing. International Society for Microbial Ecology Meeting.
+
+\item[2010] \tab Newton, R.J., Chan, L.K., Rivers, A.R., Sharma, S., Moran, M.A.  Gene expression profiles for a marine roseobacter grown with different phosphorus sources. International Society for Microbial Ecology Meeting.
+
+\item[2009] \tab Rivers, A.R. From Genes to ecosystems: understanding how the ocean?s most abundant photosynthetic organisms use iron. University of Alabama, Birmingham, School of Public Health.
+
+\item[2009] \tab Rivers, A.R. and Webb, E.A. 2007. Light induced DFB toxicity: decoupling the normal iron stress response. Center for Environmental Bioinorganic Chemistry Symposium, Princeton University. 
+
+\item[2005] \tab Rivers, A.R., Trowbridge, N. and Webb, E.A. 2005. The location of IdiA in marine Synechococcus and development of a whole cell labeling and flow cytometry assay for detection of iron stress. ASLO Ocean Sciences.
+
+		
+
+    \end{tablist}
+
+
+
+
+
+    \section*{Teaching Experience}
+
+    \subsection*{USDA Agricultural Research Service}  
+    \begin{itemize} 	
+    	\item USDA/University of Florida machine Learning workshop , Gainesville, Florida
+    	\item USDA Microbiome training workshop, Beltsville, Maryland
+	\end{itemize}
+    	
+    \subsection*{University of Georgia}
+        \begin{itemize}
+    	\item Field Studies in oceanography and marine methods, Mo'orea, Fench Polynesia
+	\end{itemize}
+
+    \subsection*{New College of Florida}
+            \begin{itemize}
+    	\item Microbes in hosts and the Environment, Sarasota, FL
+	\end{itemize}
+
+    \subsection*{Massachusetts Institute of Technology}
+            \begin{itemize}
+    	\item Graduate Resident Tutor
+	\end{itemize}
+
+
+    \section*{Service}
+
+    \subsection*{Journal Peer Review}
+
+    \begin{itemize}
+        
+        \item \textit{Frontiers in Microbiology}
+        \item \textit{Bioinformatics}
+        \item \textit{mSystems}
+        \item \textit{F1000 Research}
+        \item \textit{Environmental Microbiology}
+        \item \textit{BMC Genomics}
+        \item \textit{Phytobiomes}
+        \item \textit{Nature Scientific Data}
+
+
+    \end{itemize}
+
+
+    \subsection*{Funding Agency Peer Review}
+
+    \begin{itemize}
+
+        \item USDA National Institute of Food and Agriculture
+
+        \item Genome British Columbia
+        
+        \item US Department of Energy Joint Genome Institute
+
+    \end{itemize}
+
+    \subsection*{Service to Field}
+
+    \begin{itemize}
+
+        \item Chair, SCINet Advisory Committee (USDA scientific computing initiative)      
+   
+        \item Member, SCINet Executive Committee (USDA scientific computing initiative)     
+
+
+    \end{itemize}
+
+
+
+
+
+    \section*{Professional Affiliations}
+
+    \begin{itemize}
+
+        \item International Society for Microbial Ecology
+
+    \end{itemize}
+
+
+
+    \section*{Professional Experience}
+
+    \begin{tablist}
+
+        \item[2008--09] \tab Massachusetts Institute of Technology \\
+        			    Intern, Technology Licensing Office
+			    
+	\item[2001--03] \tab BESTechnologies, Inc, Sarasota, FL \\
+				Microbiologist	
+
+    \end{tablist}
+
+
+
+    \section*{Selected Media Coverage}
+
+    \begin{tablist}
+    
+    	\item[2016] \tab \texit{Inventology by Pagan Kennedy}. Featured in a book about open innovation.
+        \item[2010] \tab \textit{Good Morning America}.  \enquote{Deepwater Horizon Oil Spill}  May 27.
+
+        \item[2010] \tab \textit{New York Times}. \enquote{A Proliferation of Plumes? (Deepwater Horizon Oil Spill)}  June 2.
+        
+
+
+    \end{tablist}
+
+
+
+    \section*{Technical Skills}
+
+    \subsection*{Statistical and Computational Methods}
+
+    \begin{itemize}
+
+        \item Python package development and deployment. Machine learning (Scikit-learn, Tensorflow, Spark MLlib), Statistical modeling (R and Python Statsmodels). Probabilistic graphical models (Bayesian networks). Web application development, (Backends: MongoDB, PosgreSQL, MySQL, Frameworks: Eve, Flask, VueJS, Visualization: Datatables, Plotly, Dash, Leaflet, Static template rendering: Jekyll.)
+        
+
+    \end{itemize}
+
+    \subsection*{Bioinformatics}
+
+    \begin{itemize}
+
+        \item Development and operation of complex workflows for production-scale sequencing. Deployment of workflow managers for metagenomic assembly, metatranscriptomics and statistical analysis. Application of compositional data methods. I developed and maintain the QIIME 2 plugin ITSxpress.
+
+    \end{itemize}
+
+
+
+    %display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        \vspace{6em}
+        \vfill
+        Updated \monthyeardate\today
+    \end{center}
+
+
+\end{document}
