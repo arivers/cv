@@ -12,7 +12,6 @@
 \usepackage{microtype} % improves text appearance with kerning, etc
 \usepackage{datetime} % enable formatting of date output
 \usepackage{tabto} % make nice tabbing
-%\usepackage{hyperref} % enable hyperlinks and pdf metadata
 \usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] option
 \usepackage{titlesec} % allow custom section fonts
@@ -20,11 +19,11 @@
 
 %%%%
 \usepackage{apalike}
+\usepackage{natbib}
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
-
 \usepackage[colorlinks=true]{hyperref}
-\makeatletter\let\@bibitem\saved@bibitem\makeatother
+
 % hanging publications: 1st line starts at beginning of line, 
 % further lines are placed a bit to the right
 \usepackage{hanging}
@@ -176,8 +175,9 @@
 
 \nobibliography{rivers.bib}
 \bibliographystyle{apalike}
-\section*{Publications}
-    \subsection*{Articles in Peer-Reviewed Journals}
+\section*{Articles in Peer-Reviewed Journals}
+	\publication{Fernandezbaca2021a}
+	\publication{Fernandezbaca2021b}
 	\publication{Peters2020}
 	\publication{Sudduth2020}
 	\publication{Boyles2020}
@@ -245,7 +245,7 @@
         
    \section*{Intellectual property}
           \begin{tablist}
-           \item[2019]\tab Provisional US  Patent Application 62/947,681 A system and method for determining the sex and viability of poultry eggs prior to hatching\\
+           \item[2019]\tab US  Patent Application 62/947,681 A system and method for determining the sex and viability of poultry eggs prior to hatching\\
           \item[2014]\tab  Licensed a tangible biological (a biotinylated small RNA ladder) to Kerafast
           
           \end{tablist} 
@@ -314,7 +314,7 @@
     	
     \subsection*{University of Georgia}
         \begin{itemize}
-    	\item Field Studies in oceanography and marine methods, Mo'orea, Fench Polynesia
+    	\item Field Studies in oceanography and marine methods, Mo'orea, French Polynesia
 	\end{itemize}
 
     \subsection*{New College of Florida}
@@ -353,7 +353,7 @@
 
         \item USDA National Institute of Food and Agriculture
 
-        \item Genome British Columbia
+        \item Genomes British Columbia
         
         \item US Department of Energy Joint Genome Institute
 
@@ -364,8 +364,9 @@
     \begin{itemize}
 
         \item Chair, SCINet Advisory Committee (USDA scientific computing initiative)      
-   
-        \item Member, SCINet Executive Committee (USDA scientific computing initiative)     
+        \item Member, SCINet Executive Committee (USDA scientific computing initiative)
+        \item Organizer, USDA Artificial Intelligence  Center of Excellence
+        \item Editorial Advisory Board,  ACS Agricultural Science and Technology
 
 
     \end{itemize}
