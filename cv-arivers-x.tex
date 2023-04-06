@@ -12,6 +12,7 @@
 \usepackage{microtype} % improves text appearance with kerning, etc
 \usepackage{datetime} % enable formatting of date output
 \usepackage{tabto} % make nice tabbing
+%\usepackage{hyperref} % enable hyperlinks and pdf metadata
 \usepackage{geometry} % manually set page margins
 \usepackage{enumitem} % enumerate with [resume] option
 \usepackage{titlesec} % allow custom section fonts
@@ -19,11 +20,11 @@
 
 %%%%
 \usepackage{apalike}
-\usepackage{natbib}
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
-\usepackage[colorlinks=true]{hyperref}
 
+\usepackage[colorlinks=true]{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
 % hanging publications: 1st line starts at beginning of line, 
 % further lines are placed a bit to the right
 \usepackage{hanging}
@@ -153,7 +154,7 @@
         \item[2014--16] \tab US Department of Energy, Joint Genome Institute \\
                              Research Scientist  \\
 
-        \item[2009--14] \tab University of Georgia \\
+        \item[2019--14] \tab University of Georgia \\
                              Postdoctoral Research Associate, Department of Marine Science
                              
 		  
@@ -172,23 +173,32 @@
 
     \end{itemize}
 
+    \section*{Selected Machine Learning applications}
+
+    \begin{enumerate}
+    \item Vica: A workflow for identifying highly divergent viruses in metagenomes. Training Data: Refseq ~2TB of string data. Preprocessing: balanced tree sampling, and multiple feature extraction (short kmers, codon usage, protein domains, minhash signatures) converted to TFrecords. Model: Tensorflow DNN linear classifier 2 layer, regularized with dropout and batch normalized. Personally wrote code. Project transferred to graduate student to improve by controlling for prior probability shift \url{https://github.com/USDA-ARS-GBRU/vica}.
+    
+     \item Salmonella genotyping and phenotype prediction from partially missing metagenomic data. Training data 200,000, 4MB Salmonella genomes. Preprocessing: selection of core Single nucleotide polymorphisms in core genome and approximate nearest neighbor search by Hierarchical Navigable Small World Graph. Personally wrote code. Funded to develop: A disentangled variational autoencoder for reduced representations of genomes. Training of regularized feed-forward neural network for multiclass label serotype and MLST prediction. Training of regularized feed-forward neural network for antimicrobial resistance. Development of active learning/ screening system for prediction of sanitizer resistance with minimal new data.
+     
+     \item Prediction of the sex of day-old eggs from from high-speed volatiles mass spectrometry. Developed model on pilot data that used univariate feature selection and L1 regularized logistic regression to predict sex. Personally wrote code. Funded to develop: Larger scale system for prediction across breeds/sites. Preprocessing: Topological persistence data transformation, finial model form will depend on complexity of large scale data. Semisupervised learning planned for field-deployed instruments to improve deployed models.
+     
+    \item Probabilistic graphical models for building microbiome-plant-disease interaction. Integration of exometabolomics data and metagenomic data to create boolean Bayesian models of microbe-disease networks. Applications include the selection of microbial consortia for bioaugmentation. Coding done by postdoc.
+    
+        \item Multi-promoter optimization for increased biosynthetic yield. Development of a coupled robotic-ML system. Univariate promoter response curves are fit to logistic model and a random initialization set is selected. Personally wrote code. Funded to develop: Constraint programming (OR-tools CP-CATS solver) used to robotically set up reactions. Bayesian global optimization is used to efficiently select new promoter concentrations until optimal parameters are determined
+    \end{enumerate}
+
+
 
 \nobibliography{rivers.bib}
 \bibliographystyle{apalike}
-\section*{Articles in Peer-Reviewed Journals and Preprints}
-	\publication{valles2023rna}
-	\publication{mejia2022arrayed}
-	\publication{vaughn2022graph}
-	\publication{poudel2022guidemaker}
-	\publication{coatsworth2022intrinsic}
-	\publication{rivers2022gross}
-	\publication{foxx2021advancing}
-	\publication{guard2021homopolymer}
-	\publication{Fernandezbaca2021a}
-	\publication{Fernandezbaca2021b}
-	\publication{Peters2020}
-	\publication{Sudduth2020}
-	\publication{Boyles2020}
+
+\section*{Publications}
+
+
+	
+    \subsection*{Articles in Peer-Reviewed Journals}
+
+ 
 	\publication{Bolyen2019}
 	\publication{Smith2019}
         \publication{Valles2019}
@@ -209,14 +219,16 @@
 	\publication{Mcintyre2005}
 
 
-%    \subsection*{Journal Article Manuscripts Under Review}
-%
-%   \begin{tablist}
-%
-%      \item[2019] \tab Boyles, S. M. et al.  \enquote{Cryptic Dengue virus infections in natural populations of \textit{Aedes aegypti} mosquitoes in Florida} Resubmitting to \textit{eLife}.
-%     
-%    \item[2019] \tab  Fernandez-Baca, C., Rivers, A.R., Maul, J. ,Kim, W., McClung, A., Roberts, D., Reddy, V.,  Barnaby. J. \enquote{Rice Plant-Soil Microbiome Interactions Driven by Root and Shoot Biomass} Submitted to \textit{Applied and Environmental Microbiology}.
- %   \end{tablist}
+    \subsection*{Journal Article Manuscripts Under Review}
+
+    \begin{tablist}
+
+        \item[2019] \tab Boyles, S. M. et al.  \enquote{Under-the-radar dengue virus infections in natural populations of \textit{Aedes aegypti} mosquitoes.}
+        \item[2020] \tab Sudduth K.A et al. \enquote{AI Down On the Farm} 
+        \item[2020] \tab Liu S. et al. \enquote{AI Applications in Agriculture} 
+        
+
+    \end{tablist}
     
    
     \section*{Grants and Awards}
@@ -234,13 +246,13 @@
     \subsection*{Grants and Fellowships}
 
     \begin{tablist}
-    	\item[2022] \tab Xenosurveillance of flies in wet markets to monitor for the emergence and spillover potential of viral, bacterial, and parasitic pathogens. (\$431,085). ARS Geospatial and Environmental Epidemiology panel. PI.
-	\item[2022] \tab Developing tools for the real-time monitoring and query of all the world's publicly available sequence data (\$270,000 to ORISE). USDA-ARS SCINet Fellowship program. PI.
-	\item[2021] \tab The Real-time Pen-side Detection of Bovine Respiratory Disease by Chemical Analysis (\$127,000). Foundation for Food and Agriculture Research.  ICASATWG-0000000032. PI.
-	\item[2021] \tab Applying artificial intelligence to reduce antimicrobial use in livestock (\$85,000) University of Florida Research Foundation.  UF-ROSF2021. Co-PI.
-        \item[2019] \tab  Salmonella typing and phenotypic prediction from genomes and metagenomes using population genomics and machine learning (\$455,993). National Institute of Food and Agriculture AFRI, Food and Agriculture Cyberinformatics and Tools 		Initiative. NIFA 2019-67021-29924.  PI.
+
+        \item[2019] \tab  Salmonella typing and phenotypic prediction from genomes and metagenomes using population genomics and machine learning (\$455,993).  National Institute of Food and Agriculture AFRI, Food and Agriculture Cyberinformatics and Tools Initiative. NIFA 2019-67021-29924.  PI.
+        
         \item[2019]\tab  Sex determination of eggs by high-speed volatile compound mass spectrometry and machine learning  (\$396,763).  Foundation for Food and Agriculture Research, Eggtech Prize.  EggTech-0000000017. PI.
+        
         \item[2019] \tab  Developing probabilistic graphical models and analysis software to integrate multi-omics data (User facility exometabolite analysis). DOE Joint Genome Institute New Investigator Grant. JGI 505422. PI.
+        
         \item[2019] \tab Tools to rationally engineer microbial consortia for beneficial outcomes in crops. (\$140,000). ARS Administrator Funded Postdoctoral Research Associate Program. PI
         \item[2018] \tab  Applied Agricultural Genomics and Bioinformatics Research  (\$3,334,520 ). ARS In-house appropriated research ARS 6066-21310-005-00D . Co-PI.
         \item[2018] \tab Ecology and biogeochemical impacts of DNA and RNA viruses throughout the global  oceans ( \$1,052,917)  National Science Foundation NSF-1829831. Collaborator.
@@ -253,7 +265,7 @@
         
    \section*{Intellectual property}
           \begin{tablist}
-           \item[2019]\tab US  Patent Application 62/947,681 A system and method for determining the sex and viability of poultry eggs prior to hatching\\
+           \item[2019]\tab Provisional US  Patent Application 62/947,681 A system and method for determining the sex and viability of poultry eggs prior to hatching\\
           \item[2014]\tab  Licensed a tangible biological (a biotinylated small RNA ladder) to Kerafast
           
           \end{tablist} 
@@ -283,8 +295,6 @@
     \subsection*{Conference Presentations}
 
     \begin{tablist}
-    
-\item[2022 ] \tab Rivers, A.R.  Determining the sex of chicken eggs by machine learning and high-speed volatiles mass spectrometry. American Chemical Society Spring 2022 Conference. San Diego, CA.
     	
 \item[2019 ] \tab Rivers, A.R. ITSxpress: software to trim internally transcribed spacers with quality scores for sequence variant analysis. Third Workshop on Statistical and Algorithmic Challenges in Microbiome Data Analysis at The Simons Foundation , New York, NY April 1. 
 
@@ -324,7 +334,7 @@
     	
     \subsection*{University of Georgia}
         \begin{itemize}
-    	\item Field Studies in oceanography and marine methods, Mo'orea, French Polynesia
+    	\item Field Studies in oceanography and marine methods, Mo'orea, Fench Polynesia
 	\end{itemize}
 
     \subsection*{New College of Florida}
@@ -347,7 +357,6 @@
         \item \textit{Frontiers in Microbiology}
         \item \textit{Bioinformatics}
         \item \textit{mSystems}
-         \item \textit{Microorganisms}
         \item \textit{F1000 Research}
         \item \textit{Environmental Microbiology}
         \item \textit{BMC Genomics}
@@ -364,7 +373,7 @@
 
         \item USDA National Institute of Food and Agriculture
 
-        \item Genomes British Columbia
+        \item Genome British Columbia
         
         \item US Department of Energy Joint Genome Institute
 
@@ -375,9 +384,8 @@
     \begin{itemize}
 
         \item Chair, SCINet Advisory Committee (USDA scientific computing initiative)      
-        \item Member, SCINet Executive Committee (USDA scientific computing initiative)
-        \item Organizer, USDA Artificial Intelligence  Center of Excellence
-        \item Editorial Advisory Board,  ACS Agricultural Science and Technology
+   
+        \item Member, SCINet Executive Committee (USDA scientific computing initiative)     
 
 
     \end{itemize}
@@ -413,7 +421,8 @@
     \section*{Selected Media Coverage}
 
     \begin{tablist}
-        \item[2016] \tab \textit{Inventology by Pagan Kennedy.} Featured in a book about open innovation.
+    
+    	\item[2016] \tab \texit{Inventology by Pagan Kennedy}. Featured in a book about open innovation.
         \item[2010] \tab \textit{Good Morning America}.  \enquote{Deepwater Horizon Oil Spill}  May 27.
 
         \item[2010] \tab \textit{New York Times}. \enquote{A Proliferation of Plumes? (Deepwater Horizon Oil Spill)}  June 2.
